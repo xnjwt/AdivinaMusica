@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adivina el Artista</title>
+    <title>Guess the Artist</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -311,14 +311,14 @@
     
     <div class="container">
         <header>
-            <h1>Adivina el Artista</h1>
-            <p class="subtitle">Escucha la canción y selecciona al artista correcto entre las opciones</p>
+            <h1>Listen to the song and choose the correct artist from the options.</h1>
+            <p class="subtitle">Listen to the song and choose the correct artist from the options.</p>
         </header>
         
         <div class="audio-controls">
             <div class="now-playing">
                 <span class="pulse"></span>
-                <span>Reproduciendo...</span>
+                <span>Now playing...</span>
             </div>
             <button class="toggle-play-btn" id="toggle-play-btn">
                 <i class="fas fa-pause"></i>
@@ -326,7 +326,7 @@
         </div>
         
         <div class="artist-selection">
-            <h2>¿Quién es el artista?</h2>
+            <h2>Who is the artist?</h2>
             <div class="artists-container" id="artists-container">
                 <!-- Las tarjetas de artistas se generarán aquí -->
             </div>
@@ -335,7 +335,7 @@
             
             <div class="action-buttons">
                 <button class="action-btn" id="submit-btn">
-                    <i class="fas fa-check-circle"></i> Confirmar selección
+                    <i class="fas fa-check-circle"></i> Confirm selection
                 </button>
                 
             </div>
@@ -501,8 +501,8 @@
             // Mostrar resultado
             resultMessage.className = 'result-message';
             resultMessage.innerHTML = isCorrect ? 
-                '<i class="fas fa-check-circle"></i> ¡Correcto! ¡Buen trabajo!' : 
-                `<i class="fas fa-times-circle"></i> ¡Incorrecto! El artista correcto es: ${arts[correctArtistIndex].artist}`;
+                '<i class="fas fa-check-circle"></i> Correct! Nice job!' : 
+                `<i class="fas fa-times-circle"></i> Incorrect! The correct artist is: ${arts[correctArtistIndex].artist}`;
             
             resultMessage.classList.add(isCorrect ? 'correct-message' : 'incorrect-message');
             
@@ -527,7 +527,7 @@
                 {"nombre":nombre || "",
                 "artistaCorrecto":art,
                 "artistaElegido":selectedArtist,
-                "retroalimentacion": correctArtistIndex === selectedArtistIndex ?  "Correcto" : "Incorrecto"
+                "retroalimentacion": correctArtistIndex === selectedArtistIndex ?  "Correct" : "Incorrect"
                 }),
             })
             .then(response => response.text())
@@ -576,7 +576,7 @@
             
             // Manejar la detección de autoplay bloqueado
             audioPlayer.play().catch(e => {
-                console.log("Autoplay bloqueado, mostrando botón de reproducción");
+                console.log("Autoplay blocked, showing play button");
                 togglePlayBtn.innerHTML = '<i class="fas fa-play"></i>';
             });
         });
