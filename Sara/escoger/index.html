@@ -311,8 +311,8 @@
     
     <div class="container">
         <header>
-            <h1>Listen to the song and choose the correct artist from the options.</h1>
-            <p class="subtitle">Listen to the song and choose the correct artist from the options.</p>
+            <h1>Guess the Person</h1>
+            <p class="subtitle">Listen to the audio and choose the correct person. </p>
         </header>
         
         <div class="audio-controls">
@@ -326,7 +326,7 @@
         </div>
         
         <div class="artist-selection">
-            <h2>Who is the artist?</h2>
+            <h2>Who is the celebrity?</h2>
             <div class="artists-container" id="artists-container">
                 <!-- Las tarjetas de artistas se generarán aquí -->
             </div>
@@ -475,7 +475,7 @@
         // Verificar la respuesta seleccionada
         function checkAnswer() {
             if (selectedArtistIndex === null) {
-                alert("Por favor selecciona un artista antes de confirmar");
+                alert("Please, select a celebrity.");
                 return;
             }
             
@@ -502,7 +502,7 @@
             resultMessage.className = 'result-message';
             resultMessage.innerHTML = isCorrect ? 
                 '<i class="fas fa-check-circle"></i> Correct! Nice job!' : 
-                `<i class="fas fa-times-circle"></i> Incorrect! The correct artist is: ${arts[correctArtistIndex].artist}`;
+                `<i class="fas fa-times-circle"></i> Incorrect! The correct celebrity is: ${arts[correctArtistIndex].artist}`;
             
             resultMessage.classList.add(isCorrect ? 'correct-message' : 'incorrect-message');
             
